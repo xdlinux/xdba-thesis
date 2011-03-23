@@ -56,7 +56,7 @@ XDBAthesis.cls 配置文件XDBAthesis.cfg ,另外还提供了一个.tex 的模�
 *问题6.* 系统运行环境？
 
 *回答6.* 该包现在只在开发环境下测试过，基于最新的CTEX 宏包，按理可以支持任何
-的LATEX 发行版本，如果不是CTEX ，请到www.ctex.org下载最新宏包，该包是良好支
+的LATEX 发行版本，如果不是CTEX ，请到[http://code.google.com/p/ctex-kit/ http://code.google.com/p/ctex-kit/]下载最新宏包，该包是良好支
 持中文环境的。
 
 
