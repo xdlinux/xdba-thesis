@@ -1,0 +1,50 @@
+xdba-these 西安电子科技大学本科生毕业设计论文LaTeX宏包
+====
+此宏包将在使用中持续更新，版本号一格式为0.X，等顺利通过学校审核后，将发布1.0版，为正式版。
+
+注意问题
+----
+学校手册说数学公式格式要为“式（1-1）”的形式，但本模板中为“（1.1）”，这个依个人口味选择吧，不打算更新一个版本了，如果需要前者的童鞋请在导言区加入以下代码：
+
+    \renewcommand{\theequation}{\thechapter-\arabic{equation}}
+    \makeatletter
+    \def\tagform@#1{\maketag@@@{式\ignorespaces(#1)\unskip\@@italiccorr}}
+    \makeatother
+
+不知道导言区为何物？那就在正文中 `\begin{document}` 之前加入即可。
+
+感谢“乾龙巽风”童鞋提供Bug。
+
+项目介绍
+----
+本项目是西电版的LaTeX本科毕业设计论文模板宏包，该模板是基于CTeX 中文宏包开发，指在为西安电子科技大学的本科毕业生提供一个简单、专业、有效的排版工具， 且该版本不打算加入研究生毕业论文和博士生毕业论文，因为定制模板也是一个很复 杂的事情，如果有可能的话，后期可能继续单独写研究生和博士生的LaTeX 模板。作 者本着为西电同学服务的原则开发，并不承担一切有关责任与义务，如维护、更新等， 但欢迎提交BUG 。
+
+项目规范
+----
+本模板严格按照西安电子科技大学教务处教学实践中心下发的最新2010本科生 毕业设计论文要求设计制作，经过初步测试，已经完全符合要求，但是这不能保证 完全无误，所以望同学们使用时仔细慎重，如一经发现任何不符合要求之处，请联系[xuejilong@gmail.com](mailto:xuejilong@gmail.com) 进行修改。
+
+其它
+----
+* [http://code.google.com/p/xdba-thesis/downloads/list Download:  点击下载该宏包]
+* [http://code.google.com/p/xdba-thesis/wiki/AboutXDBAthesis Wiki:  点击了解更多信息]
+* [http://code.google.com/p/xdba-thesis/source/browse Source:   点击查看源代码]
+* [http://code.google.com/p/xdba-thesis/downloads/detail?name=template.pdf PDF: 点击预览模板]
+* [http://code.google.com/p/ctex-kit/  点击下载CTeX宏包]
+
+
+
+* Just for student of Xidian University;
+* Just for Bachelor Thesis use;
+* Make it simple and Specificity ;
+* Use it or not, it better to make contribution for others;
+* Welcome to report bug;
+
+联系作者
+------
+[xuejilong@gmail.com](mailto:xuejilong@gmail.com)
+
+西电开源社区
+
+
+
+
