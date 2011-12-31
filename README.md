@@ -25,19 +25,30 @@ xdba-these 西安电子科技大学本科生毕业设计论文LaTeX宏包
 
 其它
 ----
-* [http://code.google.com/p/xdba-thesis/downloads/list Download:  点击下载该宏包]
-* [http://code.google.com/p/xdba-thesis/wiki/AboutXDBAthesis Wiki:  点击了解更多信息]
-* [http://code.google.com/p/xdba-thesis/source/browse Source:   点击查看源代码]
-* [http://code.google.com/p/xdba-thesis/downloads/detail?name=template.pdf PDF: 点击预览模板]
-* [http://code.google.com/p/ctex-kit/  点击下载CTeX宏包]
+* [宏包下载](http://code.google.com/p/xdba-thesis/downloads/list)
+* [PDF: 预览模板](http://code.google.com/p/xdba-thesis/downloads/detail?name=template.pdf)]
+* [CTeX项目](http://code.google.com/p/ctex-kit/)
 
-
-
+Tips
+----
 * Just for student of Xidian University;
 * Just for Bachelor Thesis use;
 * Make it simple and Specificity ;
 * Use it or not, it better to make contribution for others;
 * Welcome to report bug;
+
+License 协议
+---
+本宏包是按照GNU LGPL协议授权分发的自由软件,在使用本宏包时，您的可以：
+* 任意下载本宏包且无需支付任何费用
+* 已任意将本宏包的副本分发给他人使用
+* 获取和修改本宏包的源代码
+
+唯需遵守以下条件:
+* 当您将自己对本宏包的修改版(即衍生作品)发布时，衍生作品也必须按照GNU LGPL或更严格的协议发布
+
+*特别声明*
+由于LaTeX文档的特殊性，使用此宏包构建的文档（即学位论文）不属于LGPL协议生效的一部分，用户也无需在文档中包含本宏包的版权声明和引用说明。
 
 联系作者
 ------
