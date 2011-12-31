@@ -26,7 +26,7 @@ xdba-these 西安电子科技大学本科生毕业设计论文LaTeX宏包
 其它
 ----
 * [宏包下载](http://code.google.com/p/xdba-thesis/downloads/list)
-* [PDF: 预览模板](http://code.google.com/p/xdba-thesis/downloads/detail?name=template.pdf)]
+* [PDF: 预览模板](http://code.google.com/p/xdba-thesis/downloads/detail?name=template.pdf)
 * [CTeX项目](http://code.google.com/p/ctex-kit/)
 
 Tips
