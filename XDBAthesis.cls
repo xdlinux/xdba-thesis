@@ -49,7 +49,7 @@
 %% graphics packages
 \RequirePackage{graphicx}
 %% sort and compress citations
-\RequirePackage[sort&compress,numbers]{natbib}
+\RequirePackage[square,sort&compress,numbers,super]{natbib}
 %% packages and settings depend on PDF mode
 \ifpdf   % We're running pdfTeX in PDF mode
     \RequirePackage[pdftex]{hyperref}
@@ -72,18 +72,23 @@
 \AtEndOfPackage{\makeatletter\input{XDBAthesis.cfg}\makeatother}
 
 %% set margin with left:3cm,right:2cm,up:3cm,down:2cm
-\oddsidemargin 0.46 true cm
+\oddsidemargin 1.46 true cm
 \evensidemargin -0.54 true cm
 \topmargin -0.54 true cm
 \headheight 11pt
-\headsep 0.61 true cm
+\headsep 17.3527pt
 \textheight 24.7 true cm
-\textwidth 16 true cm
+\textwidth 15 true cm
 \footskip 0 cm
 \parskip 0.5ex plus 0.25ex minus 0.25ex
 
+
+%\makeatletter
+%\def\tagform@#1{\maketag@@@{\ignorespaces[#1]\unskip\@@italiccorr}}
+%\makeatother
+
 \def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
-    \thispagestyle{empty}%
+    %\thispagestyle{empty}%
     \hbox{}\newpage\if@twocolumn\hbox{}\newpage\fi\fi\fi}
 
 \renewcommand{\floatpagefraction}{0.80}
@@ -131,7 +136,7 @@
         \vskip \stretch{2}
             \includegraphics[width=9cm]{xd1}
         \vskip \stretch{1}
-            {\bf\heiti\zihao{0}\ziju{0.3} \XDBA@label@thesis}
+            {\heiti\zihao{0}\ziju{0.25} \XDBA@label@thesis}
         \vskip \stretch{2}
             \includegraphics[width=5cm]{xd2}
         \vskip \stretch{2}
@@ -178,7 +183,7 @@
     \fancyhf{}
     \fancyhead[CE]{\songti\zihao{5} {\XDBA@value@title\XDBA@value@resttitle}}
     \fancyhead[CO]{\songti\zihao{5} \leftmark}
-    \fancyhead[LE,RO]{\bf\songti\zihao{-5} ~\thepage~}
+    \fancyhead[LE,RO]{\songti\zihao{-5} ~\thepage~}
     \renewcommand{\headrulewidth}{0.75pt}%
 }
 \pagestyle{fancy}
@@ -188,6 +193,7 @@
     \renewcommand{\headrulewidth}{0.75 pt}%
 
 \renewcommand{\captionlabeldelim}{}
+\renewcommand{\captionfont}{\small}
 
 \newenvironment{abstract}
     {\NCchapter{\heiti\zihao{3} \XDBA@label@abstract}{\XDBA@label@abstract}}
@@ -196,7 +202,7 @@
     \vspace{2ex}\noindent{\heiti\zihao{-4} \XDBA@label@keywords} \heiti\zihao{-4}#1}
 
 \newenvironment{englishabstract}
-    {\NCchapter{\bf\zihao{3} \XDBA@label@englishabstract}{\XDBA@label@englishabstract}}
+    {\NCSchapter{\bf\zihao{3} \XDBA@label@englishabstract}{\XDBA@label@englishabstract}}
     {}
 \newcommand\englishkeywords[1]{%
     \vspace{2ex}\noindent{\bf\zihao{-4} \XDBA@label@englishkeywords} \bf\zihao{-4}#1}
@@ -214,6 +220,18 @@
     \if@restonecol\twocolumn\fi
 }
 \addtocontents{toc}{\let\string\XDBA@spaceChar\relax}
+
+\newcommand\NCSchapter[2]{%
+\renewcommand{\chapter}{\if@openright\clearpage\else\clearpage\fi
+\global\@topnum\z@ \@afterindentfalse \secdef\@chapter\@schapter}
+    \if@mainmatter%
+        \@mainmatterfalse%
+        \chapter*{#1} \chaptermark{#2}%
+        \@mainmattertrue%
+  \else
+        \chapter*{#1}\chaptermark{#2}%
+  \fi
+}
 
 \newcommand\NCchapter[2]{%
     \if@mainmatter%

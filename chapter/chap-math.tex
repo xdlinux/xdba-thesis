@@ -1,0 +1,81 @@
+
+\chapter{数学公式}
+\label{chap:math}
+准备好了,接下来我们就要领略到\TeX 强大之所在：数学符号和公式的排版。
+本章所介绍的内容基本可以满足大部分人的需要。即便如此，也只是对此项功能的概括性的描述。
+如果不能在此章中找到你所需要的排版学公式的方法，那么你可以在其它宏集中找到答案\cite{lshort-cn}。
+
+\section{基本知识}
+\LaTeX{}~使用一种特殊的模式来排版数学符号和公式（mathematics）。段落中的数学表达式应该
+置于$\backslash$( 和$\backslash$)， \$ 和\$ 或者$\backslash$begin{math} 和$\backslash$end{math} 之间。如，$c^2=a^2+b^2$~这就是一个很简单的例子。
+
+对于较大的数学式子，最好的方法是使用显示式样来排版：将它们放于$\backslash$[~和$\backslash$]~或$\backslash$ begin{displaymath} 和$\backslash$ end{displaymath} 之间。这样排版出的公式是没有编号的。如果你希望\LaTeX{}~其添加编号的话，可以
+使用equation 环境来达到这一目的。这是第一个例子，
+\begin{displaymath}
+e=mc^2
+\end{displaymath}
+下面是第二种带编号的例子，
+\begin{equation}\label{eq:lim}
+    \lim_{n \to \infty} \sum_{k=1}^n \frac{1}{k^2} = \frac{\pi^2}{6}
+\end{equation}
+从式（\ref{eq:lim}）可以看出，在\LaTeX{}~中编辑数学公式是多么美好的一件事啊，引用也如此方便，根本
+不用你操心，只管想问题就好了，最重要的是美观。
+
+数学家们通常对使用什么样的符号非常挑剔：习惯上使用“空心粗体”（blackboard bold）来表示实数集合。这种字体可用amsfonts 或amssymb 宏包中的命命令$\backslash$mathbb
+来得到。例如：
+\begin{equation}\label{eq:sum}
+x^2 \geq 0 \qquad \textrm{for all} x \in \mathbb{R}
+\end{equation}
+
+\section{常用数学公式}
+在这一节中将介绍排版数学符号和公式的最重要的命令。数学模式中的命令仅对其后面第一个字符起作用。所以，
+如果你希望某一命令作用于多个字符的话，那么你就必须将它们放置于括号中。平方根（square root）的输入演示：
+\begin{equation}\label{eq:sq}
+    \sqrt{c} = \sqrt{x^2+\sqrt[3]{y}}
+\end{equation}
+
+向量（Vectors）通常用上方有小箭头（arrow symbols）的变量表示。这可由vec 得到。另两个命令overrightarrow 和overleftarrow在定义从A 到B 的向量时非常有用。如$\vec{a}$和$\overrightarrow{AB}$是两个向量。
+
+函数名通常用罗马字体正体排版，而不是像变量名一样用意大利体排版。因此，\LaTeX{}~提供命令来排版最重要的
+一些函数名，如下式：
+\begin{equation}\label{eq:sin}
+    \lim_{x \to 0} \frac{\sin x}{x} = 1
+\end{equation}
+
+积分运算符（integral operator）用int 来生成。求和运算符（sum operator）由sum 生成。乘积运算符（product operator）由prod 生成。上限和下限用\^{} 和\_ 来生成，类似于上标和下标。
+\begin{equation}
+    f(x) = \int_0^{2\pi}{\sum x^2 + \prod_1^n x^3}dx
+\end{equation}
+
+\section{定理和定义}
+写数学文档时有可能需要一种方式来排版“引理”、“定义”、“公理”以及类似的结构。\LaTeX{}~为此提供了下述命令：
+name 是短关键字，用于标识“定理”。text定义“定理”的真实名称，会在最终文件中打印出来。方括号中的选项是
+任意的，可以用于指定“ 定理” 中使用的标号。counter 可以指定先前声明的“定理”的name。然后新“定理”会
+按同样的顺序编号。section 指定“定理”编号所在的章节层次。
+\begin{thm}
+这是本包定义的第一个定理。可以用来测试。这是本包定义的第一个定理。可以用来测试。
+这是本包定义的第一个定理。可以用来测试。这是本包定义的第一个定理。可以用来测试。
+这是本包定义的第一个定理。可以用来测试。
+\end{thm}
+
+\begin{thm}
+这是本包定义的第二个定理。可以用来测试。这是本包定义的第二个定理。可以用来测试。
+\begin{equation}
+    \lim_{n \to \infty} \sum_{k=1}^n \frac{1}{k^2} = \frac{\pi^2}{6}
+\end{equation}
+这是本包定义的第二个定理。可以用来测试。这是本包定义的第二个定理。可以用来测试。
+\end{thm}
+
+\begin{algo}
+这是本包定义的第一个算法。可以用来测试。这是本包定义的第一个算法。可以用来测试。
+这是本包定义的第一个算法。可以用来测试。
+这是本包定义的第一个算法。可以用来测试。
+这是本包定义的第一个算法。可以用来测试。
+这是本包定义的第一个算法。可以用来测试。
+
+\end{algo}
+
+
+
+
+
