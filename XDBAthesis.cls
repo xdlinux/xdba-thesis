@@ -27,9 +27,12 @@
 \newif\ifXDBA@typeinfo \XDBA@typeinfotrue
 \DeclareOption{notypeinfo}{\XDBA@typeinfofalse}
 \newif\ifXDBA@dvips \XDBA@dvipsfalse
+\newif\ifXDBA@gbk \XDBA@gbktrue
 \DeclareOption{dvips}{\XDBA@dvipstrue}
 \DeclareOption{dvipdfm}{\XDBA@dvipsfalse}
 \DeclareOption{pdftex}{\XDBA@dvipsfalse}
+\DeclareOption{xetex}{\XDBA@dvipsfalse\XDBA@gbkfalse}
+\DeclareOption{utf-8}{\XDBA@gbkfalse}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
 \ProcessOptions
 
@@ -40,6 +43,8 @@
 
 %% check pdfTeX mode
 \RequirePackage{ifpdf}
+%% check XeLaTeX mode
+\RequirePackage{ifxetex}
 %% math packages
 \RequirePackage{amsmath,amsthm,amsfonts,amssymb,bm}
 %% modify caption
@@ -51,6 +56,7 @@
 %% sort and compress citations
 \RequirePackage[square,sort&compress,numbers,super]{natbib}
 %% packages and settings depend on PDF mode
+
 \ifpdf   % We're running pdfTeX in PDF mode
     \RequirePackage[pdftex]{hyperref}
     \DeclareGraphicsExtensions{.pdf}
@@ -59,6 +65,9 @@
         \RequirePackage[dvips]{hyperref}
         \RequirePackage{psfrag}
         \AtBeginDvi{\special{pdf:tounicode GBK-EUC-UCS2}} % GBK -> Unicode
+    \fi
+    \ifxetex
+        \RequirePackage{hyperref}
     \else
         \RequirePackage[dvipdfm]{hyperref}
     \fi
@@ -69,7 +78,15 @@
           citecolor=blue,%
         plainpages=false,%
        pdfstartview=FitH }
-\AtEndOfPackage{\makeatletter\input{XDBAthesis.cfg}\makeatother}
+
+\ifxetex
+  \XDBA@gbkfalse
+\fi
+\ifXDBA@gbk
+  \AtEndOfPackage{\makeatletter\input{XDBAthesis.cfg}\makeatother}
+\else
+  \AtEndOfPackage{\makeatletter\input{XDBAthesis-utf8.cfg}\makeatother}
+\fi
 
 %% set margin with left:3cm,right:2cm,up:3cm,down:2cm
 \oddsidemargin 1.46 true cm
