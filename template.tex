@@ -6,7 +6,7 @@
 %% template.tex v0.1, 2011/03/21
 
 
-\documentclass[dvipdfm]{XDBAthesis}
+\documentclass[pdftex]{XDBAthesis}
 % 选项说明：
 % dvipdfm  使用 dvipdfm(x) 生成最终的 PDF 文档 (缺省设置）
 % dvips    使用 dvips 生成最终的 PS 文档
@@ -14,7 +14,6 @@
 
 % 图形文件的搜索路径
 \graphicspath{{chapter/}{figures/}}
-\renewcommand{\theequation}{\thechapter-\arabic{equation}}
 \makeatletter
 \def\tagform@#1{\maketag@@@{式\ignorespaces(#1)\unskip\@@italiccorr}}
 \makeatother

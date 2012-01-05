@@ -1,5 +1,12 @@
 最新版
 ---
+####2012年1月5日更新
+
+1. 增加UTF-8编码选项，支持 XeLaTeX 编译
+2. 根据惯例对版式做了调整,中英文摘要都从右页开始，无页码，左页的页眉是论文题目，目录的左页的页眉是论文题目
+
+历史更新
+---
 [西电本科毕业设计论文LaTeX模板宏包v0.5版](http://code.google.com/p/xdba-thesis/downloads/list)
 
 更新内容：
@@ -12,9 +19,6 @@
 更新方法：将宏包中XDBAthesis.cls文件替换成最新的，重新编译即可。
 
 特别感谢：Olorin183795提交Bug。
-
-历史更新
----
 [西电本科毕业设计论文LaTeX模板宏包v0.4版](http://code.google.com/p/xdba-thesis/downloads/list)
 
 更新内容：

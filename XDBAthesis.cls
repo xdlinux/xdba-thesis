@@ -40,6 +40,12 @@
 
 %% set line spacing 1.5times,1.24*14.5=18pt
 \renewcommand{\baselinestretch}{1.24}
+% fix bullet for xetex with adobe font
+\ifxetex
+\renewcommand{\labelitemi}{\LARGE$\textbullet$}
+\fi
+% set equation numer as (1-5)
+\renewcommand{\theequation}{\thechapter-\arabic{equation}}
 
 %% check pdfTeX mode
 \RequirePackage{ifpdf}
@@ -55,6 +61,7 @@
 \RequirePackage{graphicx}
 %% sort and compress citations
 \RequirePackage[square,sort&compress,numbers,super]{natbib}
+
 %% packages and settings depend on PDF mode
 
 \ifpdf   % We're running pdfTeX in PDF mode
@@ -105,7 +112,7 @@
 %\makeatother
 
 \def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
-    %\thispagestyle{empty}%
+    %\thispagestyle{empty}
     \hbox{}\newpage\if@twocolumn\hbox{}\newpage\fi\fi\fi}
 
 \renewcommand{\floatpagefraction}{0.80}
@@ -181,8 +188,9 @@
         \vspace*{\stretch{1}}
         \begin{footnotesize}
             \noindent
-            Author by Xue-Jilong ( xuejilong@gmail.com )\\
-            Typeset by \LaTeXe{} and provide for Bachelor Thesis of Xidian University.
+            Author by Xue-Jilong ( xuejilong@gmail.com ) and Justin-Wong ( bigeagle@xdlinux.info )\\
+            Typeset by \LaTeXe{} and \CTeX{} and provide for Bachelor Thesis of Xidian University. \\
+            The first page will not appear in your final thesis paper.  Take it easy for this copyright footnote. :-)
         \end{footnotesize}
     \fi
     \cleardoublepage
@@ -198,9 +206,18 @@
 }
 \fancypagestyle{content}{%
     \fancyhf{}
-    \fancyhead[CE]{\songti\zihao{5} {\XDBA@value@title\XDBA@value@resttitle}}
     \fancyhead[CO]{\songti\zihao{5} \leftmark}
+    \fancyhead[CE]{\songti\zihao{5} {\XDBA@value@title\XDBA@value@resttitle}}
     \fancyhead[LE,RO]{\songti\zihao{-5} ~\thepage~}
+    \renewcommand{\headrulewidth}{0.75pt}%
+}
+
+\fancypagestyle{abstract}{%
+    \fancyhf{}
+    \fancyhead{}
+    \fancyhead[CO]{\songti\zihao{5} \leftmark}
+    \fancyhead[CE]{\songti\zihao{5} {\XDBA@value@title\XDBA@value@resttitle}}
+    \fancyhead[LE,RO]{}
     \renewcommand{\headrulewidth}{0.75pt}%
 }
 \pagestyle{fancy}
@@ -213,18 +230,21 @@
 \renewcommand{\captionfont}{\small}
 
 \newenvironment{abstract}
-    {\NCchapter{\heiti\zihao{3} \XDBA@label@abstract}{\XDBA@label@abstract}}
-    {}
+{\NCchapter{\heiti\zihao{3} \XDBA@label@abstract}{\XDBA@label@abstract}}
+    {\pagestyle{abstract}\thispagestyle{abstract}\cleardoublepage}
+
 \newcommand\keywords[1]{%
     \vspace{2ex}\noindent{\heiti\zihao{-4} \XDBA@label@keywords} \heiti\zihao{-4}#1}
 
 \newenvironment{englishabstract}
     {\NCSchapter{\bf\zihao{3} \XDBA@label@englishabstract}{\XDBA@label@englishabstract}}
-    {}
+    {\pagestyle{abstract}\thispagestyle{abstract}\cleardoublepage}
 \newcommand\englishkeywords[1]{%
     \vspace{2ex}\noindent{\bf\zihao{-4} \XDBA@label@englishkeywords} \bf\zihao{-4}#1}
 
 \renewcommand\tableofcontents{%
+  \setcounter{page}{1}
+  \pagestyle{content}
     \if@twocolumn
         \@restonecoltrue\onecolumn
     \else
