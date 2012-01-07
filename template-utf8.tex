@@ -6,7 +6,7 @@
 %% template.tex v0.1, 2011/03/21
 
 
-\documentclass[xetex,adobefonts]{XDBAthesis}
+\documentclass[xetex,adobefonts,master]{XDBAthesis}
 % 选项说明：
 % dvipdfm  使用 dvipdfm(x) 生成最终的 PDF 文档 (缺省设置）
 % dvips    使用 dvips 生成最终的 PS 文档
@@ -31,6 +31,8 @@
 
 %%----------------- 前言部分 ----------------- %%
     \frontmatter
+    \pagestyle{front}
+    \include{chapter-utf8/state}
     \include{chapter-utf8/abstract}
     \tableofcontents
 

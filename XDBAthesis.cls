@@ -28,18 +28,28 @@
 \DeclareOption{notypeinfo}{\XDBA@typeinfofalse}
 \newif\ifXDBA@dvips \XDBA@dvipsfalse
 \newif\ifXDBA@gbk \XDBA@gbktrue
+\newif\ifXDBA@master \XDBA@masterfalse
+\newif\ifXDBA@bachelor \XDBA@bachelortrue
 \DeclareOption{dvips}{\XDBA@dvipstrue}
 \DeclareOption{dvipdfm}{\XDBA@dvipsfalse}
 \DeclareOption{pdftex}{\XDBA@dvipsfalse}
 \DeclareOption{xetex}{\XDBA@dvipsfalse\XDBA@gbkfalse}
 \DeclareOption{utf-8}{\XDBA@gbkfalse}
+\DeclareOption{master}{\XDBA@mastertrue\XDBA@bachelorfalse}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
 \ProcessOptions
 
 \LoadClass[cs4size,a4paper,fancyhdr,fntef]{ctexbook}[2005/11/25]
 
-%% set line spacing 1.5times,1.24*14.5=18pt
-\renewcommand{\baselinestretch}{1.24}
+
+\ifXDBA@bachelor
+    %% set line spacing 1.5times,1.24*14.5=18pt
+    \renewcommand{\baselinestretch}{1.24}
+\else
+    \setlength{\baselineskip}{20pt}
+    \setlength{\jot}{-2pt} 
+\fi
+
 % fix bullet for xetex with adobe font
 \ifxetex
 \renewcommand{\labelitemi}{\LARGE$\textbullet$}
@@ -187,6 +197,12 @@
     \ifXDBA@typeinfo
         \vspace*{\stretch{1}}
         \begin{footnotesize}
+            {\bf\noindent Contributers:}
+            \begin{description}
+                \item[HaoChen] write the statement page
+                \item[Olorin183795] bug report
+                \item[yzg3307] bug report
+            \end{description}
             \noindent
             Author by Xue-Jilong ( xuejilong@gmail.com ) and Justin-Wong ( bigeagle@xdlinux.info )\\
             Typeset by \LaTeXe{} and \CTeX{} and provide for Bachelor Thesis of Xidian University. \\
@@ -212,7 +228,7 @@
     \renewcommand{\headrulewidth}{0.75pt}%
 }
 
-\fancypagestyle{abstract}{%
+\fancypagestyle{front}{%
     \fancyhf{}
     \fancyhead{}
     \fancyhead[CO]{\songti\zihao{5} \leftmark}
@@ -231,14 +247,14 @@
 
 \newenvironment{abstract}
 {\NCchapter{\heiti\zihao{3} \XDBA@label@abstract}{\XDBA@label@abstract}}
-    {\pagestyle{abstract}\thispagestyle{abstract}\cleardoublepage}
+    {\pagestyle{front}\thispagestyle{front}\cleardoublepage}
 
 \newcommand\keywords[1]{%
     \vspace{2ex}\noindent{\heiti\zihao{-4} \XDBA@label@keywords} \heiti\zihao{-4}#1}
 
 \newenvironment{englishabstract}
     {\NCSchapter{\bf\zihao{3} \XDBA@label@englishabstract}{\XDBA@label@englishabstract}}
-    {\pagestyle{abstract}\thispagestyle{abstract}\cleardoublepage}
+    {\pagestyle{front}\thispagestyle{front}\cleardoublepage}
 \newcommand\englishkeywords[1]{%
     \vspace{2ex}\noindent{\bf\zihao{-4} \XDBA@label@englishkeywords} \bf\zihao{-4}#1}
 
