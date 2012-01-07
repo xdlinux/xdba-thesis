@@ -71,7 +71,8 @@
 \RequirePackage{graphicx}
 %% sort and compress citations
 \RequirePackage[square,sort&compress,numbers,super]{natbib}
-
+%% for dashedUnderline
+\RequirePackage{ulem}
 %% packages and settings depend on PDF mode
 
 \ifpdf   % We're running pdfTeX in PDF mode
@@ -129,6 +130,7 @@
 
 \bibliographystyle{plain}
 \newcommand\XDBAspace{\protect\CTEX@spaceChar\protect\CTEX@spaceChar}
+\newcommand\XDBAquad{\protect\CTEX@spaceChar}
 
 \def\XDBA@getfileinfo#1 #2 #3\relax#4\relax{%
     \def\XDBAfiledate{#1}%
@@ -145,21 +147,36 @@
 
 %% define the underline
 \def\XDBA@underline[#1]#2{%
-  \CTEXunderline{\hbox to #1{\hfill#2\hfill}}}
-\def\XDBAunderline{\@ifnextchar[\XDBA@underline\CTEXunderline}
+  \dashuline{\hbox to #1{\hfill#2\hfill}}}
+\def\XDBAunderline{\@ifnextchar[\XDBA@underline\underline}
+
+\def\XDBA@dashuline[#1]#2{%
+  \dashuline{\hbox to #1{\hfill#2\hfill}}}
+\def\XDBAdashuline{\@ifnextchar[\XDBA@dashuline\dashuline}
 
 %% define the bookface
-\newcommand\class[1]{\def\XDBA@value@class{#1}}
 \newcommand\schoolnumber[1]{\def\XDBA@value@schoolnumber{#1}}
 \renewcommand\title[2]{\def\XDBA@value@title{#1} \def\XDBA@value@resttitle{#2}}
-\newcommand\college[1]{\def\XDBA@value@college{#1}}
 \newcommand\major[1]{\def\XDBA@value@major{#1}}
 \renewcommand\author[1]{\def\XDBA@value@author{#1}}
 \newcommand\advisor[1]{\def\XDBA@value@advisor{#1}}
 
+\ifXDBA@bachelor
+\newcommand\class[1]{\def\XDBA@value@class{#1}}
+\newcommand\college[1]{\def\XDBA@value@college{#1}}
+\else
+\newcommand\entitle[2]{\def\XDBA@value@entitle{#1} \def\XDBA@value@enresttitle{#2}}
+\newcommand\identifier[1]{\def\XDBA@value@identifier{#1}}
+\newcommand\classnumber[1]{\def\XDBA@value@classnumber{#1}}
+\newcommand\classification[1]{\def\XDBA@value@classification{#1}}
+\newcommand\majorclass[1]{\def\XDBA@value@majorclass{#1}}
+\renewcommand\date[1]{\def\XDBA@value@date{#1}}
+\fi
+
 \renewcommand\maketitle{%
     \cleardoublepage
     \thispagestyle{empty}
+    \ifXDBA@bachelor  
     \begin{flushright}
         \bf\songti\zihao{-4}
         \XDBA@label@class~ \XDBAunderline[100pt]{\XDBA@value@class}\\
@@ -190,7 +207,40 @@
             \heiti\zihao{3} \XDBA@label@advisor~
             \songti\zihao{-3}\XDBAunderline[250pt]{~\XDBA@value@advisor~}
     \end{center}
-
+    \fi
+    \ifXDBA@master
+    \setlength{\baselineskip}{24pt}
+    { \bf\heiti\zihao{5}\noindent
+        \XDBA@label@identifier\XDBAdashuline[4.45cm]{\XDBA@value@identifier}\hspace*{1cm}
+        \XDBA@label@schoolnumber\XDBAdashuline[4.45cm]{\XDBA@value@schoolnumber}\\
+        \XDBA@label@classnumber\XDBAdashuline[4.45cm]{\XDBA@value@classnumber}\hspace*{1cm}
+        \XDBA@label@classification\XDBAdashuline[4.45cm]{\XDBA@value@classification}
+        \vskip \stretch{15}\bf\heiti\zihao{4}
+        \noindent\makebox[3.08cm][s]{\XDBA@label@title}\songti\XDBAdashuline[11.88cm]{\XDBA@value@title}
+        \vskip \stretch{0.3}
+        \noindent\makebox[3.08cm][s]{}\XDBAdashuline[11.88cm]{\XDBA@value@resttitle}
+        \vskip \stretch{0.3}
+        \noindent\makebox[3.08cm][s]{}\XDBAdashuline[11.88cm]{\XDBA@value@entitle}
+        \vskip \stretch{0.3}
+        \noindent\makebox[3.08cm][s]{}\XDBAdashuline[11.88cm]{\XDBA@value@enresttitle}
+        \vskip \stretch{0.3}
+        \noindent\makebox[3.08cm][s]{\heiti\zihao{4} \XDBA@label@author}
+            \songti\zihao{4}\XDBAdashuline[2.50cm]{\XDBA@value@author~}
+            \makebox[4.45cm][s]{\heiti\zihao{4} \XDBA@label@advisor}
+            \songti\zihao{4}\XDBAdashuline[4.46cm]{\XDBA@value@advisor~}
+        \vskip \stretch{0.3}
+        \noindent\makebox[3.08cm][s]{\heiti\zihao{4} \XDBA@label@majorclass}
+            \songti\zihao{4}\XDBAdashuline[2.54cm]{\XDBA@value@majorclass}
+            \makebox[2.54cm][s]{\heiti\zihao{4} \XDBA@label@major}
+            \songti\zihao{4}\XDBAdashuline[6.3cm]{\XDBA@value@major~}
+        \vskip \stretch{0.3}
+        \noindent\makebox[3.08cm][s]{\heiti\zihao{4} \XDBA@label@date}
+            \kaishu\zihao{4}\XDBAdashuline[11.68cm]{\XDBA@value@date~}
+        \vskip \stretch{0.3}
+        \makebox[1cm]{}
+    \setlength{\baselineskip}{20pt}
+        } 
+    \fi
     \clearpage
     \if@twoside
     \thispagestyle{empty}

@@ -1,0 +1,67 @@
+%% Bachelor Thesis Template of Xidian Uniersity
+%%   for using XDBAthesis package with LaTeX
+%%
+%% Created by Xue-Jilong(xuejilong@gmail.com)
+%%
+%% template.tex v0.1, 2011/03/21
+
+
+\documentclass[pdftex,master]{XDBAthesis}
+% 选项说明：
+% dvipdfm  使用 dvipdfm(x) 生成最终的 PDF 文档 (缺省设置）
+% dvips    使用 dvips 生成最终的 PS 文档
+% pdftex   使用 pdfLaTeX 生成最终的 PDF 文档
+% xetex    使用 XeLaTeX 生成 PD F文档
+% adobefonts 使用 Adobe 中文字体
+% winfonts 使用 Windows 中文字体
+% master   用于生成硕士学位论文
+
+% 图形文件的搜索路径
+\graphicspath{{chapter-utf8/}{figures/}}
+\makeatletter
+\def\tagform@#1{\maketag@@@{式\ignorespaces(#1)\unskip\@@italiccorr}}
+\makeatother
+
+\begin{document}
+%%----------------- 封面部分 ----------------- %%
+    \schoolnumber{07071050}
+    \title{复杂网络的数学模型研究与应用}{}   %%题目超过14个字把剩下的放到第二个空
+    \entitle{Research and Application of}{ Mathematic Model of Complex Network}   %%题目超过14个字把剩下的放到第二个空
+    \major{数学与应用数学}
+    \author{薛继龙}
+    \advisor{齐小刚}
+    \date{二〇一二年一月}
+    \majorclass{理科}
+
+    \identifier{10701}
+    \classnumber{1-1(分类号)}
+    \classification{公开}
+    \maketitle
+
+%%----------------- 前言部分 ----------------- %%
+    \frontmatter
+    \pagestyle{empty}
+    \include{chapter/state}
+    \include{chapter/abstract}
+    \tableofcontents
+
+%%----------------- 正文部分 ----------------- %%
+    \mainmatter
+    \pagestyle{content}
+    \include{chapter/chap-intro}
+    \include{chapter/chap-math}
+    \include{chapter/chap-tabfig}
+    \include{chapter/chap-faq}
+
+    \appendix
+    \include{chapter/chap-req}
+
+%%----------------- 附件部分 ----------------- %%
+    \backmatter
+    \include{chapter/thanks}
+    \include{chapter/bib}
+
+\end{document}
+
+
+
