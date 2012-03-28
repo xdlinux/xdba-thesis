@@ -1,7 +1,9 @@
 xetex:
-	xelatex template-master-utf8.tex
+	xelatex template-utf8.tex
+	xelatex template-utf8.tex
 pdftex:
-	pdflatex template-master.tex
+	pdflatex template.tex
+	pdflatex template.tex
 clean:
 	rm *.out *.log *.toc *.aux
 	rm chapter/*.aux

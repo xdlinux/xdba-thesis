@@ -93,8 +93,13 @@
 \fi
 \hypersetup{CJKbookmarks,%
        bookmarksnumbered,%
-          citecolor=blue,%
-        plainpages=false,%
+       plainpages=false,%
+       %colorlinks,
+       %citecolor=black,
+       %filecolor=black,
+       %linkcolor=black,
+       %urlcolor=black,
+       hidelinks, 
        pdfstartview=FitH }
 
 \ifxetex
@@ -110,7 +115,7 @@
 \oddsidemargin 1.46 true cm
 \evensidemargin -0.54 true cm
 \topmargin -0.54 true cm
-\headheight 11pt
+\headheight 12.9pt
 \headsep 17.3527pt
 \textheight 24.7 true cm
 \textwidth 15 true cm
