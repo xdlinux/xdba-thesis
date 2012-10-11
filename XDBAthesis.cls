@@ -51,9 +51,9 @@
 \fi
 
 % fix bullet for xetex with adobe font
-\ifxetex
-\renewcommand{\labelitemi}{\LARGE$\textbullet$}
-\fi
+%\ifxetex
+%\renewcommand{\labelitemi}{\LARGE$\textbullet$}
+%\fi
 % set equation numer as (1-5)
 \renewcommand{\theequation}{\thechapter-\arabic{equation}}
 
