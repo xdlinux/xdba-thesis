@@ -47,7 +47,7 @@
     \renewcommand{\baselinestretch}{1.24}
 \else
     \setlength{\baselineskip}{20pt}
-    \setlength{\jot}{-2pt} 
+    \setlength{\jot}{-2pt}
 \fi
 
 % fix bullet for xetex with adobe font
@@ -77,7 +77,7 @@
 
 \ifpdf   % We're running pdfTeX in PDF mode
     \RequirePackage[pdftex]{hyperref}
-    \DeclareGraphicsExtensions{.pdf}
+    \DeclareGraphicsExtensions{.pdf, .eps, .mps, .jpg, .png}
 \else    % We're not running pdfTeX, or running pdfTeX in DVI mode
     \ifXDBA@dvips
         \RequirePackage[dvips]{hyperref}
@@ -99,7 +99,7 @@
        %filecolor=black,
        %linkcolor=black,
        %urlcolor=black,
-       hidelinks, 
+       hidelinks,
        pdfstartview=FitH }
 
 \ifxetex
@@ -181,7 +181,7 @@
 \renewcommand\maketitle{%
     \cleardoublepage
     \thispagestyle{empty}
-    \ifXDBA@bachelor  
+    \ifXDBA@bachelor
     \begin{flushright}
         \bf\songti\zihao{-4}
         \XDBA@label@class~ \XDBAunderline[100pt]{\XDBA@value@class}\\
@@ -244,7 +244,7 @@
         \vskip \stretch{0.3}
         \makebox[1cm]{}
     \setlength{\baselineskip}{20pt}
-        } 
+        }
     \fi
     \clearpage
     \if@twoside
