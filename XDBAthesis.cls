@@ -77,7 +77,7 @@
 
 \ifpdf   % We're running pdfTeX in PDF mode
     \RequirePackage[pdftex]{hyperref}
-    \DeclareGraphicsExtensions{.pdf, .eps, .mps, .jpg, .png}
+    \DeclareGraphicsExtensions{.pdf,.eps,.mps,.jpg,.png}
 \else    % We're not running pdfTeX, or running pdfTeX in DVI mode
     \ifXDBA@dvips
         \RequirePackage[dvips]{hyperref}
@@ -89,7 +89,7 @@
     \else
         \RequirePackage[dvipdfm]{hyperref}
     \fi
-    \DeclareGraphicsExtensions{.eps,.ps}
+    \DeclareGraphicsExtensions{.eps,.ps,.mps,.pdf,.jpg,.png}
 \fi
 \hypersetup{CJKbookmarks,%
        bookmarksnumbered,%
