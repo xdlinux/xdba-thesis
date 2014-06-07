@@ -41,10 +41,11 @@
 
 \LoadClass[cs4size,a4paper,fancyhdr,fntef]{ctexbook}[2005/11/25]
 
+\setmainfont{Times New Roman}
 
 \ifXDBA@bachelor
     %% set line spacing 1.5times,1.24*14.5=18pt
-    \renewcommand{\baselinestretch}{1.24}
+    \renewcommand{\baselinestretch}{1.62}
 \else
     \setlength{\baselineskip}{20pt}
     \setlength{\jot}{-2pt}
@@ -275,10 +276,19 @@
     \fancyhead[LE,RO]{\songti\zihao{-5} ~\thepage~}
     \renewcommand{\headrulewidth}{0.75 pt}%
 }
+
 \fancypagestyle{content}{%
     \fancyhf{}
-    \fancyhead[CO]{\songti\zihao{5} \leftmark}
-    \fancyhead[CE]{\songti\zihao{5} {\XDBA@value@title\XDBA@value@resttitle}}
+    \fancyhead[CO]{\songti\zihao{5} \nouppercase \leftmark}
+    \fancyhead[CE]{\songti\zihao{5} \nouppercase {\XDBA@value@title\XDBA@value@resttitle}}
+    \fancyhead[LE,RO]{\songti\zihao{-5} ~\thepage~}
+    \renewcommand{\headrulewidth}{0.75pt}%
+}
+
+\fancypagestyle{tableOfContent}{%
+    \fancyhf{}
+    \fancyhead[CO]{\songti\zihao{5} \nouppercase \leftmark}
+    \fancyhead[CE]{\songti\zihao{5} \nouppercase \leftmark}
     \fancyhead[LE,RO]{\songti\zihao{-5} ~\thepage~}
     \renewcommand{\headrulewidth}{0.75pt}%
 }
@@ -287,7 +297,7 @@
     \fancyhf{}
     \fancyhead{}
     \fancyhead[CO]{\songti\zihao{5} \leftmark}
-    \fancyhead[CE]{\songti\zihao{5} {\XDBA@value@title\XDBA@value@resttitle}}
+    \fancyhead[CE]{\zihao{5} {\XDBA@value@title\XDBA@value@resttitle}}
     \fancyhead[LE,RO]{}
     \renewcommand{\headrulewidth}{0.75pt}%
 }
@@ -315,7 +325,7 @@
 
 \renewcommand\tableofcontents{%
   \setcounter{page}{1}
-  \pagestyle{content}
+  \pagestyle{tableOfContent}
     \if@twocolumn
         \@restonecoltrue\onecolumn
     \else
