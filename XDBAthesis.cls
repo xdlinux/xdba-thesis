@@ -41,7 +41,6 @@
 
 \LoadClass[cs4size,a4paper,fancyhdr,fntef]{ctexbook}[2005/11/25]
 
-\setmainfont{Times New Roman}
 
 \ifXDBA@bachelor
     %% set line spacing 1.5times,1.24*14.5=18pt
@@ -105,12 +104,14 @@
 
 \ifxetex
   \XDBA@gbkfalse
+  \RequirePackage[T1]{fontenc}
 \fi
 \ifXDBA@gbk
   \AtEndOfPackage{\makeatletter\input{XDBAthesis.cfg}\makeatother}
 \else
   \AtEndOfPackage{\makeatletter\input{XDBAthesis-utf8.cfg}\makeatother}
 \fi
+\RequirePackage{times} % set english fonts to Times New Roman
 
 %% set margin with left:3cm,right:2cm,up:3cm,down:2cm
 \oddsidemargin 1.46 true cm
