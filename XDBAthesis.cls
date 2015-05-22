@@ -64,7 +64,7 @@
 %% math packages
 \RequirePackage{amsmath,amsthm,amsfonts,amssymb,bm}
 %% modify caption
-\RequirePackage{caption2}
+\RequirePackage[font=small,labelsep=space]{caption}
 %% modity tabs
 \RequirePackage{booktabs,tabularx}
 %% graphics packages
@@ -307,9 +307,6 @@
     \fancyhead[CE]{\songti\zihao{5} \leftmark}
     \fancyhead[LE,RO]{\songti\zihao{-5} ~\thepage~}
     \renewcommand{\headrulewidth}{0.75 pt}%
-
-\renewcommand{\captionlabeldelim}{}
-\renewcommand{\captionfont}{\small}
 
 \newenvironment{abstract}
 {\NCchapter{\heiti\zihao{3} \XDBA@label@abstract}{\XDBA@label@abstract}}
