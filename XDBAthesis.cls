@@ -154,7 +154,7 @@
 
 %% define the underline
 \def\XDBA@underline[#1]#2{%
-  \dashuline{\hbox to #1{\hfill#2\hfill}}}
+  \underline{\hbox to #1{\hfill#2\hfill}}}
 \def\XDBAunderline{\@ifnextchar[\XDBA@underline\underline}
 
 \def\XDBA@dashuline[#1]#2{%
