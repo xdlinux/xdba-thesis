@@ -297,8 +297,7 @@
 \fancypagestyle{front}{%
     \fancyhf{}
     \fancyhead{}
-    \fancyhead[CO]{\songti\zihao{5} \leftmark}
-    \fancyhead[CE]{\zihao{5} {\XDBA@value@title\XDBA@value@resttitle}}
+    \fancyhead[C]{\songti\zihao{5} \leftmark}
     \fancyhead[LE,RO]{}
     \renewcommand{\headrulewidth}{0.75pt}%
 }
@@ -310,14 +309,14 @@
 
 \newenvironment{abstract}
 {\NCchapter{\heiti\zihao{3} \XDBA@label@abstract}{\XDBA@label@abstract}}
-    {\pagestyle{front}\thispagestyle{front}\cleardoublepage}
+    {\pagestyle{front}\thispagestyle{front}}
 
 \newcommand\keywords[1]{%
     \vspace{2ex}\noindent{\heiti\zihao{-4} \XDBA@label@keywords} \heiti\zihao{-4}#1}
 
 \newenvironment{englishabstract}
     {\NCSchapter{\bfseries\zihao{3} \XDBA@label@englishabstract}{\XDBA@label@englishabstract}}
-    {\pagestyle{front}\thispagestyle{front}\cleardoublepage}
+    {\pagestyle{front}\thispagestyle{front}}
 \newcommand\englishkeywords[1]{%
     \vspace{2ex}\noindent{\bfseries\zihao{-4} \XDBA@label@englishkeywords} \bfseries\zihao{-4}#1}
 
