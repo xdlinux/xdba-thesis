@@ -4,3 +4,5 @@
 *.toc
 *.swp
 *~
+/*.pdf
+/*.dvi
