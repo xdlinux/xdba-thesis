@@ -64,7 +64,7 @@
 %% math packages
 \RequirePackage{amsmath,amsthm,amsfonts,amssymb,bm}
 %% modify caption
-\RequirePackage{caption2}
+\RequirePackage[font=small,labelsep=space]{caption}
 %% modity tabs
 \RequirePackage{booktabs,tabularx}
 %% graphics packages
@@ -154,7 +154,7 @@
 
 %% define the underline
 \def\XDBA@underline[#1]#2{%
-  \dashuline{\hbox to #1{\hfill#2\hfill}}}
+  \underline{\hbox to #1{\hfill#2\hfill}}}
 \def\XDBAunderline{\@ifnextchar[\XDBA@underline\underline}
 
 \def\XDBA@dashuline[#1]#2{%
@@ -185,7 +185,7 @@
     \thispagestyle{empty}
     \ifXDBA@bachelor
     \begin{flushright}
-        \bf\songti\zihao{-4}
+        \bfseries\songti\zihao{-4}
         \XDBA@label@class~ \XDBAunderline[100pt]{\XDBA@value@class}\\
         \XDBA@label@schoolnumber~ \XDBAunderline[100pt]{\XDBA@value@schoolnumber}
     \end{flushright}
@@ -217,12 +217,12 @@
     \fi
     \ifXDBA@master
     \setlength{\baselineskip}{24pt}
-    { \bf\heiti\zihao{5}\noindent
+    { \bfseries\heiti\zihao{5}\noindent
         \XDBA@label@identifier\XDBAdashuline[4.45cm]{\XDBA@value@identifier}\hspace*{1cm}
         \XDBA@label@schoolnumber\XDBAdashuline[4.45cm]{\XDBA@value@schoolnumber}\\
         \XDBA@label@classnumber\XDBAdashuline[4.45cm]{\XDBA@value@classnumber}\hspace*{1cm}
         \XDBA@label@classification\XDBAdashuline[4.45cm]{\XDBA@value@classification}
-        \vskip \stretch{15}\bf\heiti\zihao{4}
+        \vskip \stretch{15}\bfseries\heiti\zihao{4}
         \noindent\makebox[3.08cm][s]{\XDBA@label@title}\songti\XDBAdashuline[11.88cm]{\XDBA@value@title}
         \vskip \stretch{0.3}
         \noindent\makebox[3.08cm][s]{}\XDBAdashuline[11.88cm]{\XDBA@value@resttitle}
@@ -254,7 +254,7 @@
     \ifXDBA@typeinfo
         \vspace*{\stretch{1}}
         \begin{footnotesize}
-            {\bf\noindent Contributers:}
+            {\bfseries\noindent Contributers:}
             \begin{description}
                 \item[HaoChen] write the statement page
                 \item[Olorin183795] bug report
@@ -297,8 +297,7 @@
 \fancypagestyle{front}{%
     \fancyhf{}
     \fancyhead{}
-    \fancyhead[CO]{\songti\zihao{5} \leftmark}
-    \fancyhead[CE]{\zihao{5} {\XDBA@value@title\XDBA@value@resttitle}}
+    \fancyhead[C]{\songti\zihao{5} \leftmark}
     \fancyhead[LE,RO]{}
     \renewcommand{\headrulewidth}{0.75pt}%
 }
@@ -308,21 +307,18 @@
     \fancyhead[LE,RO]{\songti\zihao{-5} ~\thepage~}
     \renewcommand{\headrulewidth}{0.75 pt}%
 
-\renewcommand{\captionlabeldelim}{}
-\renewcommand{\captionfont}{\small}
-
 \newenvironment{abstract}
 {\NCchapter{\heiti\zihao{3} \XDBA@label@abstract}{\XDBA@label@abstract}}
-    {\pagestyle{front}\thispagestyle{front}\cleardoublepage}
+    {\pagestyle{front}\thispagestyle{front}}
 
 \newcommand\keywords[1]{%
     \vspace{2ex}\noindent{\heiti\zihao{-4} \XDBA@label@keywords} \heiti\zihao{-4}#1}
 
 \newenvironment{englishabstract}
-    {\NCSchapter{\bf\zihao{3} \XDBA@label@englishabstract}{\XDBA@label@englishabstract}}
-    {\pagestyle{front}\thispagestyle{front}\cleardoublepage}
+    {\NCSchapter{\bfseries\zihao{3} \XDBA@label@englishabstract}{\XDBA@label@englishabstract}}
+    {\pagestyle{front}\thispagestyle{front}}
 \newcommand\englishkeywords[1]{%
-    \vspace{2ex}\noindent{\bf\zihao{-4} \XDBA@label@englishkeywords} \bf\zihao{-4}#1}
+    \vspace{2ex}\noindent{\bfseries\zihao{-4} \XDBA@label@englishkeywords} \bfseries\zihao{-4}#1}
 
 \renewcommand\tableofcontents{%
   \setcounter{page}{1}
@@ -411,7 +407,7 @@
         \begingroup
             \parindent \z@ \rightskip \@pnumwidth
             \parfillskip -\@pnumwidth
-            \leavevmode \bf\songti\zihao{-4}
+            \leavevmode \bfseries\songti\zihao{-4}
             \advance\leftskip\@tempdima
             \hskip -\leftskip
             #1\nobreak
