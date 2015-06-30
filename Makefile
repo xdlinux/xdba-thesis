@@ -11,6 +11,6 @@ master-utf8:
 	xelatex template-master-utf8.tex
 	xelatex template-master-utf8.tex
 clean:
-	rm *.out *.log *.toc *.aux
-	rm chapter/*.aux
-	rm chapter-utf8/*.aux
+	rm -f *.out *.log *.toc *.aux
+	rm -f chapter/*.aux 
+	rm -f chapter-utf8/*.aux
