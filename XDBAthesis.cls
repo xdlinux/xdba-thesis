@@ -39,6 +39,13 @@
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
 \ProcessOptions
 
+% 2.4版本以上的fontspec需要在定义字体时设置字号，触发\CTEXsetfont。
+% CTEX包中设置中文字体的命令要早于\CTEX@spaceChar的定义，而可能使用
+% \CTEX@spaceChar的宏\CTEXsetfont则在\CTEX@spaceChar之前定义。详细
+% 见issue #12。
+% 这只是一个临时的补丁，需要等待CTEX推出2.0版本。
+\expandafter\def\csname CTEX@spaceChar\endcsname{\hspace{1em}}
+
 \LoadClass[cs4size,a4paper,fancyhdr,fntef]{ctexbook}[2005/11/25]
 
 
