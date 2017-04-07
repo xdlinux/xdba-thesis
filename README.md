@@ -8,13 +8,16 @@ xdba-these 西安电子科技大学本科生毕业设计论文LaTeX宏包
 
 项目规范
 ----
-本模板严格按照西安电子科技大学教务处教学实践中心下发的最新2010本科生 毕业设计论文要求设计制作，经过初步测试，已经完全符合要求，但是这不能保证 完全无误，所以望同学们使用时仔细慎重，如一经发现任何不符合要求之处，请联系[BigEagle](mailto:bigeagle@xdlinux.info) 进行修改。
+本模板严格按照西安电子科技大学教务处教学实践中心下发的最新2012本科生 毕业设计论文要求设计制作，经过初步测试，已经完全符合要求，但是这不能保证 完全无误，所以望同学们使用时仔细慎重，如一经发现任何不符合要求之处，请提交新的issue或者pull request。
 
-其它
+文件编码
 ----
-* [宏包下载](https://github.com/xdlinux/xdba-thesis/zipball/master)
-* [PDF: 预览模板](https://github.com/xdlinux/xdba-thesis/raw/master/template-utf8.pdf)
-* [CTeX项目](http://code.google.com/p/ctex-kit/)
+模板的默认编码已改为UTF-8，请使用支持UTF-8的编辑器（如Notepad++）撰写论文。
+
+相关项目
+----
+* [xduthesis](https://github.com/fredqi/xduthesis)
+* [XDUthesis-personal](https://github.com/StickCui/XDUthesis-personal)
 
 Tips
 ----
@@ -38,11 +41,6 @@ License 协议
 
 **特别声明**
 由于LaTeX文档的特殊性，使用此宏包构建的文档（即学位论文）不属于LGPL协议生效的一部分，用户也无需在文档中包含本宏包的版权声明和引用说明。
-
-联系作者
-------
-[bigeagle@xdlinux.info](mailto:bigeagle@xdlinux.info)
-[xuejilong@gmail.com](mailto:xuejilong@gmail.com)
 
 西电开源社区
 
