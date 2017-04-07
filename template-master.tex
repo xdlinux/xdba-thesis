@@ -17,7 +17,7 @@
 % master   用于生成硕士学位论文
 
 % 图形文件的搜索路径
-\graphicspath{{chapter-utf8/}{figures/}}
+\graphicspath{{chapter/}{figures/}}
 
 \begin{document}
 %%----------------- 封面部分 ----------------- %%
@@ -38,25 +38,25 @@
 %%----------------- 前言部分 ----------------- %%
     \frontmatter
     \pagestyle{empty}
-    \include{chapter-utf8/state}
-    \include{chapter-utf8/abstract}
+    \include{chapter/state}
+    \include{chapter/abstract}
     \tableofcontents
 
 %%----------------- 正文部分 ----------------- %%
     \mainmatter
     \pagestyle{content}
-    \include{chapter-utf8/chap-intro}
-    \include{chapter-utf8/chap-math}
-    \include{chapter-utf8/chap-tabfig}
-    \include{chapter-utf8/chap-faq}
+    \include{chapter/chap-intro}
+    \include{chapter/chap-math}
+    \include{chapter/chap-tabfig}
+    \include{chapter/chap-faq}
 
     \appendix
-    \include{chapter-utf8/chap-req}
+    \include{chapter/chap-req}
 
 %%----------------- 附件部分 ----------------- %%
     \backmatter
-    \include{chapter-utf8/thanks}
-    \include{chapter-utf8/bib}
+    \include{chapter/thanks}
+    \include{chapter/bib}
 
 \end{document}
 

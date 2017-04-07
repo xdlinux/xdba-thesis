@@ -1,16 +1,20 @@
+RM = /bin/rm -f
+
+XETEX ?= xelatex
+#PDFTEX ?= pdflatex
+
+
+.PHONY: all clean
+
+all: xetex master
+
 xetex:
-	xelatex template-utf8.tex
-	xelatex template-utf8.tex
-pdftex:
-	pdflatex template.tex
-	pdflatex template.tex
+	$(XETEX) template.tex
+	$(XETEX) template.tex
 master:
-	pdflatex template-master.tex
-	pdflatex template-master.tex
-master-utf8:
-	xelatex template-master-utf8.tex
-	xelatex template-master-utf8.tex
+	$(XETEX) template-master.tex
+	$(XETEX) template-master.tex
+
 clean:
-	rm -f *.out *.log *.toc *.aux
-	rm -f chapter/*.aux 
-	rm -f chapter-utf8/*.aux
+	@$(RM) *.out *.log *.toc *.aux
+	@$(RM) chapter/*.aux 

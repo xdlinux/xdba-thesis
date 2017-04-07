@@ -27,14 +27,12 @@
 \newif\ifXDBA@typeinfo \XDBA@typeinfotrue
 \DeclareOption{notypeinfo}{\XDBA@typeinfofalse}
 \newif\ifXDBA@dvips \XDBA@dvipsfalse
-\newif\ifXDBA@gbk \XDBA@gbktrue
 \newif\ifXDBA@master \XDBA@masterfalse
 \newif\ifXDBA@bachelor \XDBA@bachelortrue
 \DeclareOption{dvips}{\XDBA@dvipstrue}
 \DeclareOption{dvipdfm}{\XDBA@dvipsfalse}
 \DeclareOption{pdftex}{\XDBA@dvipsfalse}
-\DeclareOption{xetex}{\XDBA@dvipsfalse\XDBA@gbkfalse}
-\DeclareOption{utf-8}{\XDBA@gbkfalse}
+\DeclareOption{xetex}{\XDBA@dvipsfalse}
 \DeclareOption{master}{\XDBA@mastertrue\XDBA@bachelorfalse}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
 \ProcessOptions
@@ -56,6 +54,9 @@
     \setlength{\baselineskip}{20pt}
     \setlength{\jot}{-2pt}
 \fi
+
+% breaks long urls
+\PassOptionsToPackage{hyphens}{url}
 
 % fix bullet for xetex with adobe font
 %\ifxetex
@@ -110,14 +111,9 @@
        pdfstartview=FitH }
 
 \ifxetex
-  \XDBA@gbkfalse
   \RequirePackage[T1]{fontenc}
 \fi
-\ifXDBA@gbk
-  \AtEndOfPackage{\makeatletter\input{XDBAthesis.cfg}\makeatother}
-\else
-  \AtEndOfPackage{\makeatletter\input{XDBAthesis-utf8.cfg}\makeatother}
-\fi
+\AtEndOfPackage{\makeatletter\input{XDBAthesis.cfg}\makeatother}
 \RequirePackage{times} % set english fonts to Times New Roman
 
 %% set margin with left:3cm,right:2cm,up:3cm,down:2cm
