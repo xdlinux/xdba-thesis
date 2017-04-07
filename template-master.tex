@@ -6,57 +6,57 @@
 %% template.tex v0.1, 2011/03/21
 
 
-\documentclass[pdftex,master]{XDBAthesis}
-% Ñ¡ÏîËµÃ÷£º
-% dvipdfm  Ê¹ÓÃ dvipdfm(x) Éú³É×îÖÕµÄ PDF ÎÄµµ (È±Ê¡ÉèÖÃ£©
-% dvips    Ê¹ÓÃ dvips Éú³É×îÖÕµÄ PS ÎÄµµ
-% pdftex   Ê¹ÓÃ pdfLaTeX Éú³É×îÖÕµÄ PDF ÎÄµµ
-% xetex    Ê¹ÓÃ XeLaTeX Éú³É PD FÎÄµµ
-% adobefonts Ê¹ÓÃ Adobe ÖĞÎÄ×ÖÌå
-% winfonts Ê¹ÓÃ Windows ÖĞÎÄ×ÖÌå
-% master   ÓÃÓÚÉú³ÉË¶Ê¿Ñ§Î»ÂÛÎÄ
+\documentclass[xetex,adobefonts,master]{XDBAthesis}
+% é€‰é¡¹è¯´æ˜ï¼š
+% dvipdfm  ä½¿ç”¨ dvipdfm(x) ç”Ÿæˆæœ€ç»ˆçš„ PDF æ–‡æ¡£ (ç¼ºçœè®¾ç½®ï¼‰
+% dvips    ä½¿ç”¨ dvips ç”Ÿæˆæœ€ç»ˆçš„ PS æ–‡æ¡£
+% pdftex   ä½¿ç”¨ pdfLaTeX ç”Ÿæˆæœ€ç»ˆçš„ PDF æ–‡æ¡£
+% xetex    ä½¿ç”¨ XeLaTeX ç”Ÿæˆ PD Fæ–‡æ¡£
+% adobefonts ä½¿ç”¨ Adobe ä¸­æ–‡å­—ä½“
+% winfonts ä½¿ç”¨ Windows ä¸­æ–‡å­—ä½“
+% master   ç”¨äºç”Ÿæˆç¡•å£«å­¦ä½è®ºæ–‡
 
-% Í¼ĞÎÎÄ¼şµÄËÑË÷Â·¾¶
+% å›¾å½¢æ–‡ä»¶çš„æœç´¢è·¯å¾„
 \graphicspath{{chapter-utf8/}{figures/}}
 
 \begin{document}
-%%----------------- ·âÃæ²¿·Ö ----------------- %%
+%%----------------- å°é¢éƒ¨åˆ† ----------------- %%
     \schoolnumber{07071050}
-    \title{¸´ÔÓÍøÂçµÄÊıÑ§Ä£ĞÍÑĞ¾¿ÓëÓ¦ÓÃ}{}   %%ÌâÄ¿³¬¹ı14¸ö×Ö°ÑÊ£ÏÂµÄ·Åµ½µÚ¶ş¸ö¿Õ
-    \entitle{Research and Application of}{ Mathematic Model of Complex Network}   %%ÌâÄ¿³¬¹ı14¸ö×Ö°ÑÊ£ÏÂµÄ·Åµ½µÚ¶ş¸ö¿Õ
-    \major{ÊıÑ§ÓëÓ¦ÓÃÊıÑ§}
-    \author{Ñ¦¼ÌÁú}
-    \advisor{ÆëĞ¡¸Õ}
-    \date{¶ş©–Ò»¶şÄêÒ»ÔÂ}
-    \majorclass{Àí¿Æ}
+    \title{å¤æ‚ç½‘ç»œçš„æ•°å­¦æ¨¡å‹ç ”ç©¶ä¸åº”ç”¨}{}   %%é¢˜ç›®è¶…è¿‡14ä¸ªå­—æŠŠå‰©ä¸‹çš„æ”¾åˆ°ç¬¬äºŒä¸ªç©º
+    \entitle{Research and Application of}{ Mathematic Model of Complex Network}   %%é¢˜ç›®è¶…è¿‡14ä¸ªå­—æŠŠå‰©ä¸‹çš„æ”¾åˆ°ç¬¬äºŒä¸ªç©º
+    \major{æ•°å­¦ä¸åº”ç”¨æ•°å­¦}
+    \author{è–›ç»§é¾™}
+    \advisor{é½å°åˆš}
+    \date{äºŒã€‡ä¸€äºŒå¹´ä¸€æœˆ}
+    \majorclass{ç†ç§‘}
 
-    \identifier{10701}
-    \classnumber{1-1(·ÖÀàºÅ)}
-    \classification{¹«¿ª}
+    \identifier{007}
+    \classnumber{1-1(åˆ†ç±»å·)}
+    \classification{å…¬å¼€}
     \maketitle
 
-%%----------------- Ç°ÑÔ²¿·Ö ----------------- %%
+%%----------------- å‰è¨€éƒ¨åˆ† ----------------- %%
     \frontmatter
     \pagestyle{empty}
-    \include{chapter/state}
-    \include{chapter/abstract}
+    \include{chapter-utf8/state}
+    \include{chapter-utf8/abstract}
     \tableofcontents
 
-%%----------------- ÕıÎÄ²¿·Ö ----------------- %%
+%%----------------- æ­£æ–‡éƒ¨åˆ† ----------------- %%
     \mainmatter
     \pagestyle{content}
-    \include{chapter/chap-intro}
-    \include{chapter/chap-math}
-    \include{chapter/chap-tabfig}
-    \include{chapter/chap-faq}
+    \include{chapter-utf8/chap-intro}
+    \include{chapter-utf8/chap-math}
+    \include{chapter-utf8/chap-tabfig}
+    \include{chapter-utf8/chap-faq}
 
     \appendix
-    \include{chapter/chap-req}
+    \include{chapter-utf8/chap-req}
 
-%%----------------- ¸½¼ş²¿·Ö ----------------- %%
+%%----------------- é™„ä»¶éƒ¨åˆ† ----------------- %%
     \backmatter
-    \include{chapter/thanks}
-    \include{chapter/bib}
+    \include{chapter-utf8/thanks}
+    \include{chapter-utf8/bib}
 
 \end{document}
 
